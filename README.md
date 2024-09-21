@@ -1,1 +1,1 @@
-# FinalProject
+# Supermarket Project
