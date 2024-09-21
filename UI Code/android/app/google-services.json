@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884158408697",
+    "project_id": "smartsupermarket-b1ce5",
+    "storage_bucket": "smartsupermarket-b1ce5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884158408697:android:5b44da704402c607ca7f28",
+        "android_client_info": {
+          "package_name": "com.example.smartsupermarket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb8vpqi-QaaTU2YiDmRryw-WIt5UlWZnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
