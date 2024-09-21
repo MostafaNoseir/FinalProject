@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -310.2, "left": 2.8, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 43.1, "left": 119.8, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -606.8,
+      "left": -42.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 6.4,
+      "left": 514.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -408.8,
+      "left": 347.82,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -198.4,
+      "left": -220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -314.4,
+      "left": 203.4,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -69.2, "left": -134.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -366.1, "left": 873.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -39.7, "left": -326.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "h0" ] ],
+    [ "servo1:GND", "bb1:bn.13", "black", [ "h0" ] ],
+    [ "servo1:V+", "bb1:bp.15", "green", [ "h0" ] ],
+    [ "servo1:PWM", "esp:D2", "green", [ "h0" ] ],
+    [ "esp:3V3", "bb1:bp.2", "green", [ "v9.6", "h143.7" ] ],
+    [ "lcd1:VCC", "bb1:bp.40", "red", [ "h0" ] ],
+    [ "lcd1:GND", "bb1:bn.41", "black", [ "h0" ] ],
+    [ "pir1:GND", "bb1:bn.32", "black", [ "v0" ] ],
+    [ "pir1:VCC", "bb1:bn.31", "red", [ "v0" ] ],
+    [ "bz1:1", "bb1:22t.d", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:23t.d", "", [ "$bb" ] ],
+    [ "bz1:2", "esp:D27", "green", [ "v0" ] ],
+    [ "lcd1:SCL", "esp:D22", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-28.8", "v38.6" ] ],
+    [ "bz1:1", "bb1:bp.17", "green", [ "v0" ] ],
+    [ "ldr1:VCC", "bb1:bp.1", "red", [ "h0" ] ],
+    [ "ldr1:GND", "bb1:bn.3", "black", [ "h0" ] ],
+    [ "ldr1:AO", "esp:D33", "green", [ "h28.8", "v364.1" ] ],
+    [ "keypad1:R1", "esp:D15", "green", [ "v0" ] ],
+    [
+      "pir1:OUT",
+      "esp:D13",
+      "green",
+      [ "v38.4", "h-0.14", "v0", "h0", "v0", "h0", "v316.8", "h-259.2", "v48" ]
+    ],
+    [ "keypad1:R2", "esp:D4", "green", [ "v0" ] ],
+    [ "esp:RX2", "keypad1:R3", "green", [ "h0" ] ],
+    [ "keypad1:R4", "esp:D5", "green", [ "v0" ] ],
+    [ "keypad1:C1", "esp:D18", "green", [ "v0" ] ],
+    [ "keypad1:C2", "esp:D19", "green", [ "v0" ] ],
+    [ "keypad1:C3", "esp:D23", "green", [ "v0" ] ],
+    [ "keypad1:C4", "esp:D32", "green", [ "v0" ] ],
+    [ "pot2:VCC", "bb1:bp.11", "red", [ "v0" ] ],
+    [ "pot2:GND", "bb1:bn.11", "black", [ "v0" ] ],
+    [ "pot2:SIG", "esp:D12", "green", [ "v0" ] ],
+    [ "pot1:GND", "bb1:bn.50", "black", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:bp.50", "red", [ "v0" ] ],
+    [ "pot1:SIG", "esp:D14", "green", [ "v163.2", "h-470.8", "v384" ] ]
+  ],
+  "dependencies": {}
+}
